@@ -17,4 +17,4 @@ i18n.use(LanguageDetector).init({
 });
 
 const { t } = i18n;
-export { i18n, t as translate};
+export { i18n, t as translate };
