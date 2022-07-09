@@ -1,11 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
+import { UseColorPallete } from "../../../../hook/customHooks/UseCollorPallete";
 
 function WellcomeMessageSection() {
+    const color = UseColorPallete().SECOND_TEXT_COLOR
   return (
-    <MessageSection>
+    <MessageSection color={color}>
       <FirstMessageDiv>
-        <MediumMessage>Hello World</MediumMessage>
+        <MediumMessage >Hello World</MediumMessage>
         <Underscore>_________________________</Underscore>
       </FirstMessageDiv>
       <PrincipalMessage>I AM GABRIEL LIMA</PrincipalMessage>
@@ -21,6 +23,7 @@ export default WellcomeMessageSection;
 const MessageSection = styled.section`
   width: 100%;
   height: 30%;
+  color: ${props => props.color}
 `;
 
 const Underscore = styled.h3`
