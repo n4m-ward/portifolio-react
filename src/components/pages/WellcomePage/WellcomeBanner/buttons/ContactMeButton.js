@@ -18,9 +18,10 @@ const ContactMeBtn = styled.button`
   height: 77px;
   background: linear-gradient(
       180deg,
-      #1e2c47 0%,
-      #f6e3f7 0.01%,
-      rgba(139, 158, 197, 0) 100%
+      #5aa6c5 0%,
+      #5aa6c5 0.01%,
+      rgba(90, 166, 197, 0.906341) 9.38%,
+      rgba(213, 225, 229, 0) 100%
     ),
     #ffffff;
   border: 1px solid #35476b;
