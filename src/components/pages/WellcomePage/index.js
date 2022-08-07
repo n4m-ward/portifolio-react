@@ -6,7 +6,7 @@ import WellcomeImage from './WellcomeImage';
 
 function WellcomePage() {
   return (
-    <PageCard>
+    <PageCard firstPage={true}>
       <FlexDiv>
         <WellcomeBanner />
         <WellcomeImage />
