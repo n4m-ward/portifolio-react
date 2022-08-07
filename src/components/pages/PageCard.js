@@ -2,9 +2,17 @@ import React from 'react';
 import styled from 'styled-components';
 import { UseColorPallete } from '../../hook/customHooks/UseCollorPallete';
 
-function PageCard({ children }) {
+function PageCard({ children, firstPage, display }) {
   const background = UseColorPallete().MAIN_BACKGROUND_COLOR;
-  return <GradientCard background={background}>{children}</GradientCard>;
+  return (
+    <GradientCard
+      background={background}
+      firstPage={firstPage}
+      display={display}
+    >
+      {children}
+    </GradientCard>
+  );
 }
 
 export default PageCard;
@@ -12,5 +20,6 @@ export default PageCard;
 const GradientCard = styled.div`
   background: ${({ background }) => background};
   width: 100%;
-  min-height: 88vh;
+  min-height: ${({ firstPage }) => (firstPage ? '90vh' : '100vh')};
+  display: ${({ display }) => display || 'block'};
 `;

@@ -53,10 +53,12 @@ const InternalDiv = styled.div`
 `;
 
 const Root = styled.div`
+  display: grid;
+  place-items: center;
   position: sticky;
   display: flex;
   justify-content: center;
   background-color: #35476b;
   width: 100%;
-  height: 80px;
+  height: 12vh;
 `;

@@ -1,6 +1,7 @@
 import React from 'react';
 import NavBar from './components/NavBar/NavBar.js';
 import WellcomePage from './components/pages/WellcomePage/index.js';
+import CarrerPage from './components/pages/CarrerPage/index.js';
 import { ThemeContext } from './hook/context/ThemeContext';
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
       <ThemeContext>
         <NavBar />
         <WellcomePage />
+        <CarrerPage />
       </ThemeContext>
     </div>
   );
