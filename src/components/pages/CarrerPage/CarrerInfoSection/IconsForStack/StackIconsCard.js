@@ -1,15 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
 import LineBar from '../../../../LineBar';
+import IconsDiv from './IconsDiv';
 import type { StackIcons } from '../../../../../Types/StackIcons';
 
 function StackIconsCard({ index, iconUrl, stackIcons, name }: StackIcons) {
+  const [showIcons, setShowIcons] = React.useState(false);
+
   return (
-    <Card>
-      <StackDiv>
+    <Card showIcons={showIcons}>
+      <StackDiv onClick={() => setShowIcons(!showIcons)}>
         <img src={iconUrl} alt={name}/>
         <StackName>{name}</StackName>
       </StackDiv>
+      {showIcons && <IconsDiv stackIcons={stackIcons} /> }
       <LineBar index={index} />
     </Card>
   );
@@ -19,16 +23,15 @@ export default StackIconsCard;
 
 const Card = styled.div`
   width: 190px;
-  height: 60px;
+  ${({showIcons}) => !showIcons ? 'height: 60px' : 'height: 160px'};
+  min-height: 60px;
   margin: 20px;
 
   background: #e9e4e4;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  display: grid;
 
   cursor: pointer;
 
@@ -58,14 +61,16 @@ const Card = styled.div`
     margin-bottom: 20px;
   }
 `;
+
 const StackDiv = styled.div`
   width: 100%;
-  height: 80%;
+  height: 57px;
 
   display: flex;
   align-items: center;
   justify-content: space-around;
 `;
+
 const StackName = styled.span`
   font-size: 25px;
 
@@ -77,3 +82,4 @@ const StackName = styled.span`
     font-size: 25px;
   }
 `;
+
