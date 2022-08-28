@@ -24,12 +24,9 @@ function IconsForStack() {
 export default IconsForStack;
 
 const Root = styled.div`
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   height: 200px;
-  overflow-y: scroll;
 
   @media (max-width: 320px) {
     height: 400px;
