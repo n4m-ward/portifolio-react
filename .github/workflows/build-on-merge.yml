@@ -1,12 +1,14 @@
 name: deploy-on-merge
 
 on:
-  merge:
-    branches:
+  pull_request:
+    branches: 
       - main
+    types: [closed]
 
 jobs:
   deploy:
+    if: ${{ github.event.pull_request.merged }}
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
