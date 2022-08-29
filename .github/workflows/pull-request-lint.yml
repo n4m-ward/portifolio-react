@@ -1,0 +1,19 @@
+name: pull-request-lint
+
+on:
+  - pull_request
+
+jobs:
+  lint:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '16.x'
+      - name: Install dependencies
+        run: npm install
+      - name: Lint flow
+        run: npm run flow
+      - name: Lint Eslint
+        run: npx eslint . --ignore-path .gitignore --ignore-path .eslintignore
