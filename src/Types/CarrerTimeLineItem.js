@@ -1,3 +1,5 @@
+// @flow
+
 export type CarrerTimeLineItem = {
   role: string,
   company: string,
