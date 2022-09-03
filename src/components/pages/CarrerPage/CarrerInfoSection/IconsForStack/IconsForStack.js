@@ -26,7 +26,7 @@ export default IconsForStack;
 const Root = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  height: 200px;
+  min-height: 200px;
 
   @media (max-width: 320px) {
     height: 400px;

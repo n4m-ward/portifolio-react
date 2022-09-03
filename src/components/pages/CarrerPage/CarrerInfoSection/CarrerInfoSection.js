@@ -16,7 +16,7 @@ export default CarrerInfoSection;
 
 const Root = styled.div`
   width: 40%;
-  height: 500px;
+  min-height: 500px;
 
   display: flex;
   flex-direction: column;
