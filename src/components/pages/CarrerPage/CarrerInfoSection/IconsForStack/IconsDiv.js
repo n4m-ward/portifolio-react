@@ -57,6 +57,9 @@ const Root = styled.div`
 
 const BaseIconSvg = styled.img`
     width: 40px;
-    margin: 10px;
-    margin-bottom: 10px;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    @media (max-width: 500px) {
+      width: 30px;
+    }
 `
