@@ -52,7 +52,8 @@ type CarrerCardType = {
     date: string,
     description: string,
     marginOnTop: boolean,
-    noMargin: boolean
+    noMargin: boolean,
+    index: number
 }
 
 const cardHeigth = 233;
