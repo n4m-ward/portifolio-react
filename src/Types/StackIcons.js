@@ -1,9 +1,7 @@
 // @flow
 
-import type { Icon } from './Icons';
+import type {Icon} from './Icons';
 
 export type StackIcons = {
-  name: string,
-  iconUrl: string,
-  stackIcons: Array<Icon>,
+    stackIcons: Array<Icon>,
 };

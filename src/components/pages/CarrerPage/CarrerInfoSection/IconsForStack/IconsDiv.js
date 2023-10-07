@@ -1,23 +1,23 @@
 import React from 'react'
 import styled from 'styled-components';
-import type { StackIcons } from '../../../../../Types/StackIcons'
-import type { Icon } from '../../../../../Types/Icons'
+import type {StackIcons} from '../../../../../Types/StackIcons'
+import type {Icon} from '../../../../../Types/Icons'
 
-
-export default function IconsDiv({ stackIcons }: StackIcons) {
-  return (
-    <MainDiv>
-      <Divisor />
-      <Root>
-        {stackIcons.map((icon: Icon) => (
-            <BaseIconSvg 
-                src={icon.iconUrl} 
-                alt={icon.name}
-            />)
-        )}
-    </Root>
-    </MainDiv>
-  )
+export default function IconsDiv({stackIcons}: StackIcons) {
+    return (
+        <MainDiv>
+            <Divisor/>
+            <Root>
+                {stackIcons.map((icon: Icon) => (
+                        <BaseIconSvg
+                            src={icon.iconUrl}
+                            alt={icon.name}
+                        />
+                    )
+                )}
+            </Root>
+        </MainDiv>
+    )
 }
 
 const MainDiv = styled.div`
@@ -36,6 +36,7 @@ const Root = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   overflow-y: auto;
+
   &::-webkit-scrollbar {
     width: 5px;
     height: 5px;
@@ -56,10 +57,10 @@ const Root = styled.div`
 `
 
 const BaseIconSvg = styled.img`
-    width: 40px;
-    margin: 0 auto;
-    margin-bottom: 15px;
-    @media (max-width: 500px) {
-      width: 30px;
-    }
+  width: 40px;
+  margin: 0 auto;
+  margin-bottom: 15px;
+  @media (max-width: 500px) {
+    width: 30px;
+  }
 `

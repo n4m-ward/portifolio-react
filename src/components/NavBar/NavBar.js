@@ -1,26 +1,26 @@
 import React from 'react';
 import NavBarIcon from './NavBarIcon';
 import styled from 'styled-components';
-import { translate } from '../../translate';
+import {translate} from '../../translate';
 import LinkSection from './LinkSection';
 import ButtonSection from './ButtonSection';
 
 function NavBar() {
-  return (
-    <Root>
-      <InternalDiv>
-        <NavBarIcon
-          text={translate('navBar.navBarLogo')}
-          fontSize={'30px'}
-          fontWeight={400}
-        />
-        <MenuSection>
-          <LinkSection />
-          <ButtonSection />
-        </MenuSection>
-      </InternalDiv>
-    </Root>
-  );
+    return (
+        <Root>
+            <InternalDiv>
+                <NavBarIcon
+                    text={translate('navBar.navBarLogo')}
+                    fontSize={'30px'}
+                    fontWeight={'bold'}
+                />
+                <MenuSection>
+                    <LinkSection/>
+                    <ButtonSection/>
+                </MenuSection>
+            </InternalDiv>
+        </Root>
+    );
 }
 
 export default NavBar;
@@ -28,7 +28,7 @@ export default NavBar;
 const MenuSection = styled.section`
   display: flex;
   justify-content: space-between;
-  height: 78px;
+  height: 100%;
   width: 70%;
 
   @media (min-width: 1440px) {
@@ -53,14 +53,13 @@ const InternalDiv = styled.div`
 `;
 
 const Root = styled.div`
-  display: grid;
   place-items: center;
   position: sticky;
   display: flex;
   justify-content: center;
   background-color: #35476b;
   width: 100%;
-  height: 12vh;
+  height: 10vh;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
