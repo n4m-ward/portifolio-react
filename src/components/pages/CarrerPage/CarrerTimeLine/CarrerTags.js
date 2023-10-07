@@ -4,7 +4,7 @@ import styled from "styled-components";
 import {useEffect, useState} from "react";
 import {FONT_FAMMILY} from "../../../../colorPallet";
 
-export default function CarrerTags({tags, showAll}: { tags: string[], showAll: boolean }) {
+export default function CarrerTags({tags, showAll}): React.FC {
     const [firstThreeTags, setFirstThreeTags] = useState([]);
     const [remainingTags, setRemainingTags] = useState([]);
 
