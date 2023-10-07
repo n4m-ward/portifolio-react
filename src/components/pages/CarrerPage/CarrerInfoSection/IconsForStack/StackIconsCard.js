@@ -2,21 +2,21 @@ import React from 'react';
 import styled from 'styled-components';
 import LineBar from '../../../../LineBar';
 import IconsDiv from './IconsDiv';
-import type { StackIcons } from '../../../../../Types/StackIcons';
+import type {StackIcons} from '../../../../../Types/StackIcons';
 
-function StackIconsCard({ index, iconUrl, stackIcons, name }: StackIcons) {
-  const [showIcons, setShowIcons] = React.useState(false);
+function StackIconsCard({index, iconUrl, stackIcons, name}: StackIcons) {
+    const [showIcons, setShowIcons] = React.useState(false);
 
-  return (
-    <Card showIcons={showIcons}>
-      <StackDiv onClick={() => setShowIcons(!showIcons)}>
-        <img src={iconUrl} alt={name}/>
-        <StackName>{name}</StackName>
-      </StackDiv>
-      {showIcons && <IconsDiv stackIcons={stackIcons} /> }
-      <LineBar index={index} />
-    </Card>
-  );
+    return (
+        <Card showIcons={showIcons}>
+            <StackDiv onClick={() => setShowIcons(!showIcons)}>
+                <img src={iconUrl} alt={name}/>
+                <StackName>{name}</StackName>
+            </StackDiv>
+            {showIcons && <IconsDiv stackIcons={stackIcons}/>}
+            <LineBar index={index}/>
+        </Card>
+    );
 }
 
 export default StackIconsCard;
@@ -28,7 +28,7 @@ const Card = styled.div`
   margin: 20px;
 
   background: #e9e4e4;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
 
   display: grid;
@@ -73,6 +73,7 @@ const StackDiv = styled.div`
 
 const StackName = styled.span`
   font-size: 25px;
+  font-weight: bold;
 
   @media (max-width: 375px) {
     font-size: 20px;

@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+
+  portifolio-react:
+    build: .
+    container_name: portifolio-react
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app/data
+    networks:
+      app_net:
+        ipv4_address: 172.20.0.10
+    restart: always
+
+networks:
+  app_net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16

@@ -14,7 +14,6 @@ function LanguageSelector() {
 export default LanguageSelector;
 
 const Select = styled.select`
-  position: absolute;
   width: 100px;
   height: 33px;
   background: #f2f2f2;

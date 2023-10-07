@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import { translate } from '../../../../../translate';
+import {translate} from '../../../../../translate';
 
 function GetCvButton() {
-  return (
-    <CvButton>
-      <ButtonTxt>{translate('wellcomePage.getCv')}</ButtonTxt>
-    </CvButton>
-  );
+    return (
+        <CvButton>
+            <ButtonTxt>{translate('wellcomePage.getCv')}</ButtonTxt>
+        </CvButton>
+    );
 }
 
 export default GetCvButton;
@@ -17,8 +17,8 @@ const CvButton = styled.button`
   height: 77px;
   cursor: pointer;
   background: linear-gradient(180deg, #2a3752 0%, rgba(150, 172, 217, 0) 100%),
-    #35476b;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  #35476b;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
 
   @media (min-width: 2200px) {
@@ -38,9 +38,8 @@ const CvButton = styled.button`
 `;
 
 const ButtonTxt = styled.span`
-  font-family: 'Rowdies';
   font-style: normal;
-  font-weight: 400;
+  font-weight: bold;
   font-size: 32px;
   line-height: 43px;
   color: #ffedff;

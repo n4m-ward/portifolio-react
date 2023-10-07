@@ -1,21 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
-import { UseColorPallete } from "../../../../hook/customHooks/UseCollorPallete";
+import {UseColorPallete} from "../../../../hook/customHooks/UseCollorPallete";
+import {FONT_FAMMILY} from "../../../../colorPallet";
 
 function WellcomeMessageSection() {
     const color = UseColorPallete().SECOND_TEXT_COLOR
-  return (
-    <MessageSection color={color}>
-      <FirstMessageDiv>
-        <MediumMessage >Hello World</MediumMessage>
-        <Underscore>_________________________</Underscore>
-      </FirstMessageDiv>
-      <PrincipalMessage>I AM GABRIEL LIMA</PrincipalMessage>
-      <MediumMessage style={{ marginTop: -25 }}>
-        Full Stack Developer
-      </MediumMessage>
-    </MessageSection>
-  );
+    return (
+        <MessageSection color={color}>
+            <FirstMessageDiv>
+                <MediumMessage>Hello World</MediumMessage>
+                <Underscore>_________________________</Underscore>
+            </FirstMessageDiv>
+            <PrincipalMessage>I AM GABRIEL LIMA</PrincipalMessage>
+            <MediumMessage style={{marginTop: -25}}>
+                Full Stack Developer
+            </MediumMessage>
+        </MessageSection>
+    );
 }
 
 export default WellcomeMessageSection;
@@ -53,8 +54,9 @@ const Underscore = styled.h3`
 
 const MediumMessage = styled.h2`
   font-style: normal;
-  font-weight: 400;
+  font-weight: bold;
   font-size: 32px;
+  font-family: ${FONT_FAMMILY};
 
   @media (min-width: 2200px) {
     font-size: 70px;
@@ -75,8 +77,9 @@ const MediumMessage = styled.h2`
   }
 `;
 const PrincipalMessage = styled.h1`
+  font-family: ${FONT_FAMMILY};
   font-style: normal;
-  font-weight: 400;
+  font-weight: bold;
   font-size: 48px;
   margin-top: -20px;
 

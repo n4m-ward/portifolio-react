@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import type { CarrerTimeLineItem } from '../../../api/carrer';
+import type { CarrerTimeLineItem } from '../../../../api/carrer';
 import CarrerCard from './CarrerCard';
 
 function CarrerCardDiv({ timeLine, marginOnTop, noMargin, keyPrefix }) {
@@ -15,6 +15,8 @@ function CarrerCardDiv({ timeLine, marginOnTop, noMargin, keyPrefix }) {
           marginOnTop={marginOnTop}
           date={timeLineItem.date}
           noMargin={noMargin}
+          description={timeLineItem.description}
+          tags={timeLineItem.tags}
         />
       ))}
     </CardDiv>
