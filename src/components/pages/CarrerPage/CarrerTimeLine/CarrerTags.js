@@ -1,10 +1,8 @@
-// @flow
-
 import styled from "styled-components";
 import {useEffect, useState} from "react";
 import {FONT_FAMMILY} from "../../../../colorPallet";
 
-export default function CarrerTags({tags, showAll}): React.FC {
+export default function CarrerTags({tags, showAll}) {
     const [firstThreeTags, setFirstThreeTags] = useState([]);
     const [remainingTags, setRemainingTags] = useState([]);
 
