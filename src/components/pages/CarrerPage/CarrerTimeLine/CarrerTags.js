@@ -1,4 +1,5 @@
 // @flow
+
 import styled from "styled-components";
 import {useEffect, useState} from "react";
 import {FONT_FAMMILY} from "../../../../colorPallet";
@@ -18,8 +19,9 @@ export default function CarrerTags({tags, showAll}: { tags: string[], showAll: b
 
     return <CarrerTagDiv>
         {showAll
-            ? tags.map((tag: string) => <CarrerTag tag={tag} remainingTags={remainingTags}/>)
-            : firstThreeTags.map((tag: string) => <CarrerTag tag={tag} remainingTags={remainingTags}/>)
+            ? tags.map((tag: string, index: number) => <CarrerTag tag={tag} remainingTags={remainingTags} key={index}/>)
+            : firstThreeTags.map((tag: string, index: number) => <CarrerTag tag={tag} remainingTags={remainingTags}
+                                                                            key={index}/>)
         }
     </CarrerTagDiv>
 }
