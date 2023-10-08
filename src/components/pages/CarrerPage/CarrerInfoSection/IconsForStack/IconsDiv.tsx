@@ -1,20 +1,18 @@
 import React from 'react'
 import styled from 'styled-components';
-import type {StackIcons} from '../../../../../Types/StackIcons'
 import type {Icon} from '../../../../../Types/Icons'
 
-export default function IconsDiv({stackIcons}: StackIcons) {
+export default function IconsDiv({stackIcons}: { stackIcons: Icon[] }) {
     return (
         <MainDiv>
             <Divisor/>
             <Root>
                 {stackIcons.map((icon: Icon) => (
-                        <BaseIconSvg
-                            src={icon.iconUrl}
-                            alt={icon.name}
-                        />
-                    )
-                )}
+                    <BaseIconSvg
+                        src={icon.iconUrl}
+                        alt={icon.name}
+                    />
+                ))}
             </Root>
         </MainDiv>
     )

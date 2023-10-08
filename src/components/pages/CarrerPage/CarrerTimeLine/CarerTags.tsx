@@ -2,9 +2,9 @@ import styled from "styled-components";
 import {useEffect, useState} from "react";
 import {FONT_FAMMILY} from "../../../../colorPallet";
 
-export default function CarrerTags({tags, showAll}) {
-    const [firstThreeTags, setFirstThreeTags] = useState([]);
-    const [remainingTags, setRemainingTags] = useState([]);
+export default function CarerTags({tags, showAll}: CarerTagsProps) {
+    const [firstThreeTags, setFirstThreeTags] = useState<string[]>([]);
+    const [remainingTags, setRemainingTags] = useState<string[]>([]);
 
     useEffect(() => {
         const firstThree = tags.slice(0, 3)
@@ -44,6 +44,14 @@ const CarrerTag = ({remainingTags, tag}: { remainingTags: string[], tag: string 
     );
 };
 
+type CarerTagsProps = {
+    tags: string[],
+    showAll: boolean
+}
+type CarerTagSpanProps = {
+    cursorPointer: boolean
+}
+
 const ToolTipDiv = styled.div`
   position: absolute;
   bottom: 20px;
@@ -55,7 +63,7 @@ const ToolTipDiv = styled.div`
   white-space: pre-wrap;
 `
 
-const CarrerTagSpan = styled.span`
+const CarrerTagSpan = styled.span<CarerTagSpanProps>`
   margin: 3px;
   cursor: default;
   position: relative;

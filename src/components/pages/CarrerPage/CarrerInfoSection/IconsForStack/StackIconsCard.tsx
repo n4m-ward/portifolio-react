@@ -3,25 +3,26 @@ import styled from 'styled-components';
 import LineBar from '../../../../LineBar';
 import IconsDiv from './IconsDiv';
 import type {StackIcons} from '../../../../../Types/StackIcons';
+import {getLineColorByIndex} from "../../CarrerTimeLine/CarrerCard";
 
-function StackIconsCard({index, iconUrl, stackIcons, name}: StackIcons) {
+function StackIconsCard({index, stackIcons}: { index: number, stackIcons: StackIcons }) {
     const [showIcons, setShowIcons] = React.useState(false);
 
     return (
         <Card showIcons={showIcons}>
             <StackDiv onClick={() => setShowIcons(!showIcons)}>
-                <img src={iconUrl} alt={name}/>
-                <StackName>{name}</StackName>
+                <img src={stackIcons.iconUrl} alt={stackIcons.name}/>
+                <StackName>{stackIcons.name}</StackName>
             </StackDiv>
-            {showIcons && <IconsDiv stackIcons={stackIcons}/>}
-            <LineBar index={index}/>
+            {showIcons && <IconsDiv stackIcons={stackIcons.stackIcons}/>}
+            <LineBar color={getLineColorByIndex(index, false)}/>
         </Card>
     );
 }
 
 export default StackIconsCard;
 
-const Card = styled.div`
+const Card = styled.div<{ showIcons: boolean }>`
   width: 190px;
   ${({showIcons}) => !showIcons ? 'height: 60px' : 'height: 160px'};
   min-height: 60px;

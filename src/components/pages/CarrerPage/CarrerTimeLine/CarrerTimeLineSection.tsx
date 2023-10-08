@@ -3,14 +3,15 @@ import styled from 'styled-components';
 import {getCarrerTimeLine} from '../../../../api/carrer';
 import CarrerCardDiv from './CarrerCardDiv';
 import WorkLine from '../WorkLine';
+import type {CarrerTimeLineItem} from "../../../../Types/CarrerTimeLineItem";
 
 function CarrerTimeLineSection() {
-    const [timeLine, setTimeLine] = useState([]);
-    const [timeLineLeft, setTimeLineLeft] = useState([]);
-    const [timeLineRight, setTimeLineRight] = useState([]);
+    const [timeLine, setTimeLine] = useState<CarrerTimeLineItem[]>([]);
+    const [timeLineLeft, setTimeLineLeft] = useState<CarrerTimeLineItem[]>([]);
+    const [timeLineRight, setTimeLineRight] = useState<CarrerTimeLineItem[]>([]);
 
     React.useEffect(() => {
-        const carrerTimeLine = getCarrerTimeLine();
+        const carrerTimeLine: CarrerTimeLineItem[] = getCarrerTimeLine();
         setTimeLine(carrerTimeLine);
         setTimeLineLeft(carrerTimeLine.filter((obj, key) => numberIsOdd(key + 1)));
         setTimeLineRight(
@@ -18,7 +19,7 @@ function CarrerTimeLineSection() {
         );
     }, []);
 
-    function numberIsOdd(number) {
+    function numberIsOdd(number: number) {
         return number % 2 !== 0;
     }
 
@@ -30,7 +31,7 @@ function CarrerTimeLineSection() {
                     marginOnTop={false}
                     keyPrefix={'desktop_card_left'}
                 />
-                <WorkLine mobile={false} timeLine={timeLine} keyPrefix={'desktop'}/>
+                <WorkLine timeLine={timeLine} keyPrefix={'desktop'}/>
                 <CarrerCardDiv
                     timeLine={timeLineRight}
                     marginOnTop={true}
@@ -39,7 +40,7 @@ function CarrerTimeLineSection() {
             </DesktopDiv>
             {/**diferent div that will display if user is in mobile browser */}
             <MobileDiv>
-                <WorkLine mobile={false} timeLine={timeLine} keyPrefix={'mobile'}/>
+                <WorkLine timeLine={timeLine} keyPrefix={'mobile'}/>
                 <CarrerCardDiv
                     timeLine={timeLine}
                     marginOnTop={false}
