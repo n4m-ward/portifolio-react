@@ -31,7 +31,7 @@ function CarrerTimeLineSection() {
                     marginOnTop={false}
                     keyPrefix={'desktop_card_left'}
                 />
-                <WorkLine timeLine={timeLine} keyPrefix={'desktop'}/>
+                <WorkLine timeLine={timeLine}/>
                 <CarrerCardDiv
                     timeLine={timeLineRight}
                     marginOnTop={true}
@@ -40,7 +40,7 @@ function CarrerTimeLineSection() {
             </DesktopDiv>
             {/**diferent div that will display if user is in mobile browser */}
             <MobileDiv>
-                <WorkLine timeLine={timeLine} keyPrefix={'mobile'}/>
+                <WorkLine timeLine={timeLine}/>
                 <CarrerCardDiv
                     timeLine={timeLine}
                     marginOnTop={false}
