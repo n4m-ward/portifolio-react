@@ -1,27 +1,33 @@
 import React from 'react';
 import styled from 'styled-components';
+import {CarrerTimeLineItem} from "../../../Types/CarrerTimeLineItem";
 
-function WorkLine({timeLine, keyPrefix}) {
-    function isTheLastItem(index) {
+export default function WorkLine({timeLine}: WorkLineProps) {
+    function isTheLastItem(index: number) {
         return index + 1 === timeLine.length;
     }
 
     return (
         <WorkLineDiv>
             {timeLine.map((timeLineItem, index) => (
-                <>
-                    <TimeLineVerticalBar index={index} key={keyPrefix + index}/>
-                    <WorkIcon src="work-icon.svg" key={'workline_' + index}/>
+                <div key={index}>
+                    <TimeLineVerticalBar index={index}/>
+                    <WorkIcon src="work-icon.svg"/>
                     {isTheLastItem(index) && <TimeLineVerticalBar lastItem={true}/>}
-                </>
+                </div>
             ))}
         </WorkLineDiv>
     );
 }
 
-export default WorkLine;
-
-const TimeLineVerticalBar = styled.div`
+type WorkLineProps = {
+    timeLine: CarrerTimeLineItem[],
+}
+type TimeLineVerticalBarProps = {
+    index?: number,
+    lastItem?: boolean
+}
+const TimeLineVerticalBar = styled.div<TimeLineVerticalBarProps>`
   margin: 0 auto;
   border-radius: 10px;
 

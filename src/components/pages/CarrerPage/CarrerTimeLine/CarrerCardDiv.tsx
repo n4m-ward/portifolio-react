@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import type {CarrerTimeLineItem} from '../../../../api/carrer';
 import CarrerCard from './CarrerCard';
+import type {CarrerTimeLineItem} from "../../../../Types/CarrerTimeLineItem";
 
-function CarrerCardDiv({timeLine, marginOnTop, noMargin, keyPrefix}) {
+function CarrerCardDiv({timeLine, marginOnTop, noMargin, keyPrefix}: CarrerCardInput) {
     return (
         <CardDiv>
             {timeLine.map((timeLineItem: CarrerTimeLineItem, index: number) => (
@@ -26,5 +26,13 @@ function CarrerCardDiv({timeLine, marginOnTop, noMargin, keyPrefix}) {
 const CardDiv = styled.div`
   margin: 20px;
 `;
+
+type CarrerCardInput = {
+    timeLine: CarrerTimeLineItem[],
+    marginOnTop: boolean,
+    noMargin?: boolean,
+    keyPrefix: string
+}
+
 
 export default CarrerCardDiv;

@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import styled from 'styled-components';
 import LineBar from '../../../LineBar';
 import {LINES} from '../../../../colorPallet/lines.enum';
-import CarrerTags from "./CarrerTags";
+import CarerTags from "./CarerTags";
 import {FONT_FAMMILY} from "../../../../colorPallet";
 
 function CarrerCard({
@@ -36,7 +36,7 @@ function CarrerCard({
                     </CarrerTextDescription>
                 </CarrerDescriptionDiv>
             }
-            <CarrerTags tags={tags} showAll={seeMore}/>
+            <CarerTags tags={tags} showAll={seeMore}/>
             <LineBar color={getLineColorByIndex(index, marginOnTop, noMargin)}/>
         </Card>
     );
@@ -51,13 +51,13 @@ type CarrerCardType = {
     date: string,
     description: string,
     marginOnTop: boolean,
-    noMargin: boolean,
+    noMargin?: boolean,
     index: number
 }
 
 const cardHeigth = 233;
 
-function getCardMargin(marginOnTop, noMargin) {
+function getCardMargin(marginOnTop: boolean, noMargin?: boolean) {
     const margin = marginOnTop ? 'margin-top' : 'margin-bottom';
 
     if (noMargin) return `${margin}: 20px`;
@@ -65,7 +65,7 @@ function getCardMargin(marginOnTop, noMargin) {
     return `${margin}: ${cardHeigth + 10}px`;
 }
 
-function getLineColorByIndex(index, marginOnTop, noMargin) {
+export function getLineColorByIndex(index: number, marginOnTop: boolean, noMargin?: boolean) {
     const numberToFindInArray = numberIsOdd(index + 1) ? 0 : 1;
 
     if (noMargin) return LINES[index];
@@ -77,8 +77,13 @@ function getLineColorByIndex(index, marginOnTop, noMargin) {
     return colorLinesArrayFilteredByCardDivPosition[numberToFindInArray];
 }
 
-function numberIsOdd(number) {
+function numberIsOdd(number: number) {
     return number % 2 !== 0;
+}
+
+type CardProps = {
+    marginOnTop: boolean,
+    noMargin?: boolean
 }
 
 const CarrerDiv = styled.div`
@@ -143,7 +148,7 @@ const InternalCardDiv = styled.div`
   margin: 20px;
 `;
 
-const Card = styled.div`
+const Card = styled.div<CardProps>`
   font-family: ${FONT_FAMMILY};
   ${({marginOnTop, noMargin}) => getCardMargin(marginOnTop, noMargin)};
   box-sizing: border-box;

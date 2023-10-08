@@ -8,13 +8,11 @@ function IconsForStack() {
     const stackIcons = getStackIcons();
     return (
         <Root>
-            {stackIcons.map((stackIcons: StackIcons, index: int) => (
+            {stackIcons.map((stackIcons: StackIcons, index: number) => (
                 <StackIconsCard
                     key={index}
                     index={index}
-                    name={stackIcons.name}
-                    iconUrl={stackIcons.iconUrl}
-                    stackIcons={stackIcons.stackIcons}
+                    stackIcons={stackIcons}
                 />
             ))}
         </Root>
