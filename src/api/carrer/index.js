@@ -25,7 +25,7 @@ export const getCarrerTimeLine = (): Array<CarrerTimeLineItem> => {
             description: `- Prestando consultoria ao EBANX
 - Integração com Gateways de pagamento
 - Desenvolvimento e manutenção em sistemas com frontend feito em React, criando testes unitários com Jest e testes de integração com cypress.
-- Backend feito em PHP, utilizando DDD como metodologia de desenvolvimento, com testes unitários e de integração feitos com Jest.
+- Backend feito em PHP, utilizando DDD como metodologia de desenvolvimento, com testes unitários utilizando PHPUnit.
 - CI/CD.`,
         },
         {
