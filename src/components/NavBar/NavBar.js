@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import NavBarIcon from './NavBarIcon';
 import styled from 'styled-components';
 import {translate} from '../../translate';
@@ -6,16 +6,33 @@ import LinkSection from './LinkSection';
 import ButtonSection from './ButtonSection';
 
 function NavBar() {
+    const [scrolled, setScrolled] = useState(false);
+
+    const handleScroll = () => {
+        if (window.scrollY > 150) {
+            setScrolled(true);
+        } else {
+            setScrolled(false);
+        }
+    }
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
     return (
-        <Root>
+        <Root className={scrolled ? 'scrolled' : ''}>
             <InternalDiv>
                 <NavBarIcon
                     text={translate('navBar.navBarLogo')}
                     fontSize={'30px'}
                     fontWeight={'bold'}
+                    scrolled={scrolled}
                 />
                 <MenuSection>
-                    <LinkSection/>
+                    <LinkSection scrolled={scrolled}/>
                     <ButtonSection/>
                 </MenuSection>
             </InternalDiv>
@@ -60,7 +77,10 @@ const Root = styled.div`
   background-color: #35476b;
   width: 100%;
   height: 10vh;
-  position: -webkit-sticky;
-  position: sticky;
   top: 0;
+  transition: background 0.3s ease;
+
+  &.scrolled {
+    background: transparent;
+  }
 `;
