@@ -3,12 +3,12 @@ import styled from 'styled-components';
 import {translate} from '../../translate';
 import NavBarIcon from './NavBarIcon';
 
-function LinkSection() {
+function LinkSection({scrolled}) {
     return (
         <Root>
-            <NavBarIcon text={translate('navBar.aboutMe')} fontWeight={'bold'}/>
-            <NavBarIcon text={translate('navBar.projects')} fontWeight={'bold'}/>
-            <NavBarIcon text={translate('navBar.contact')} fontWeight={'bold'}/>
+            <NavBarIcon text={translate('navBar.aboutMe')} fontWeight={'bold'} scrolled={scrolled}/>
+            <NavBarIcon text={translate('navBar.projects')} fontWeight={'bold'} scrolled={scrolled}/>
+            <NavBarIcon text={translate('navBar.contact')} fontWeight={'bold'} scrolled={scrolled}/>
         </Root>
     );
 }

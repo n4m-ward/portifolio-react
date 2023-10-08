@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import {FONT_FAMMILY} from "../../colorPallet";
 
-function NavBarIcon({fontSize, fontWeight, text}) {
+function NavBarIcon({fontSize, fontWeight, text, scrolled}) {
     return (
-        <Root fontSize={fontSize} fontWeight={fontWeight}>
+        <Root fontSize={fontSize} fontWeight={fontWeight} scrolled={scrolled}>
             {text}
         </Root>
     );
@@ -19,5 +19,5 @@ const Root = styled.span`
   line-height: 50px;
   letter-spacing: 0;
   text-align: left;
-  color: #ffedff;
+  color: ${(p) => p.scrolled ? '#35476B' : '#ffedff'};
 `;
