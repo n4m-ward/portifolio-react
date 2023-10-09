@@ -19,10 +19,10 @@ export const getCarrerTimeLine = (): Array<CarrerTimeLineItem> => {
             role: 'Desenvolvedor PHP Pleno',
             company: 'EBANX/Objective',
             date: 'Mai/2022 - Dez/2022',
-            tags: ['PHP', 'Laravel', 'React'],
+            tags: ['PHP', 'Laravel', 'React', 'Redis', 'PgSQL', 'PHPUnit', 'Jest', 'Cypress', 'DDD'],
             description: `- Prestando consultoria ao EBANX
 - Integração com Gateways de pagamento
-- Desenvolvimento e manutenção em sistemas com frontend feito em React, criando testes unitários com Jest e testes de integração com cypress.
+- Desenvolvimento e manutenção da Payment Page EBANX com frontend feito em React, criando testes unitários com Jest e testes de integração com cypress.
 - Backend feito em PHP, utilizando DDD como metodologia de desenvolvimento, com testes unitários utilizando PHPUnit.
 - CI/CD.`,
         },
@@ -30,7 +30,7 @@ export const getCarrerTimeLine = (): Array<CarrerTimeLineItem> => {
             role: 'Engenheiro de Software',
             company: 'Logcomex',
             date: 'Fev/2021 - Mai/2022',
-            tags: ['PHP', 'Laravel', 'Vue', 'Python', 'RabbitMQ'],
+            tags: ['PHP', 'Laravel', 'Vue', 'Python', 'Javascript', 'Typescript', 'RabbitMQ', 'Amazon-SQS', 'Amazon-SNS', 'Redis'],
             description: `- Desenvolvimento e manutenção de sistemas com frontend feito em Vue + Nuxt.js e Typescript. 
 Backend feito em Laravel + php, e banco de dados pgsql.
 - Refatoração de um monólito feito em laravel para uma arquitetura de microserviços, utilizando Rabbitmq + Lumen.
@@ -43,7 +43,7 @@ Backend feito em Laravel + php, e banco de dados pgsql.
             role: 'Dev freelancer Full-stack',
             company: 'Autonomo',
             date: 'Jan/2021 - Now',
-            tags: ['PHP', 'Laravel', 'Vue'],
+            tags: ['PHP', 'Laravel', 'Vue', 'Node.js', 'MySQL', 'Knex.js'],
             description: `- Desenvolvimento de software
 - Criação de um Sistema de gestão 
 - Javascript, Node, Vue.js
@@ -53,7 +53,7 @@ Backend feito em Laravel + php, e banco de dados pgsql.
             role: 'Estagiario de programação',
             company: 'Teknisa',
             date: 'Jan/2021 - Now',
-            tags: ['PHP', 'Laravel', 'Vue'],
+            tags: ['PHP', 'Vue', 'Typescript', 'Pl/SQL'],
             description: `- Implantação de novas funcionalidades
 - Desenvolvimento de software
 - PHP, Javascript, Typescript, Json, Vue
