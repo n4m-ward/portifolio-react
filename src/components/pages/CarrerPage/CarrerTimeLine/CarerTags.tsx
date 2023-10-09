@@ -17,8 +17,8 @@ export default function CarerTags({tags, showAll}: CarerTagsProps) {
 
     return <CarrerTagDiv>
         {showAll
-            ? tags.map((tag: string, index: number) => <CarrerTag tag={tag} remainingTags={remainingTags} key={index}/>)
-            : firstThreeTags.map((tag: string, index: number) => <CarrerTag tag={tag} remainingTags={remainingTags}
+            ? tags.map((tag: string, index: number) => <CarrerTag tag={getTagFormatted(tag, tags, index)} remainingTags={remainingTags} key={index}/>)
+            : firstThreeTags.map((tag: string, index: number) => <CarrerTag tag={getTagFormatted(tag, tags, index)} remainingTags={remainingTags}
                                                                             key={index}/>)
         }
     </CarrerTagDiv>
@@ -43,6 +43,24 @@ const CarrerTag = ({remainingTags, tag}: { remainingTags: string[], tag: string 
         </CarrerTagSpan>
     );
 };
+
+function getTagFormatted(tag: string, tags: string[], index: number): string {
+  if(tag === '...') {
+    return tag;
+  }
+  if(index === 0) {
+    return tag;
+  }
+  
+  if(isTheLastTag(tags, index)) {
+    return tag;
+  }
+  return `- ${tag}`
+}
+
+function isTheLastTag(tags: string[], index: number): boolean {
+    return tags.length === index +1;
+}
 
 type CarerTagsProps = {
     tags: string[],
