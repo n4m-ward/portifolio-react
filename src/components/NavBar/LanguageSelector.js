@@ -1,14 +1,28 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import styled from 'styled-components';
-import { translate } from '../../translate';
+import {translate} from '../../translate';
 
 function LanguageSelector() {
-  return (
-    <Select>
-      <SelectOption>{translate('languageSelector.portuguese')}</SelectOption>
-      <SelectOption>{translate('languageSelector.english')}</SelectOption>
-    </Select>
-  );
+    const [defaultLanguage, setDefaultLanguage] = useState('pt-BR');
+
+    useEffect(() => {
+        const language = localStorage.getItem('i18nextLng');
+        if (language) {
+            setDefaultLanguage(language)
+        }
+    }, []);
+
+    function changeLanguage(language) {
+        localStorage.setItem('i18nextLng', language);
+        window.location.reload();
+    }
+
+    return (
+        <Select onChange={(e) => changeLanguage(e.target.value)} value={defaultLanguage}>
+            <SelectOption value='pt-BR'>{translate('languageSelector.portuguese')}</SelectOption>
+            <SelectOption value='en-US'>{translate('languageSelector.english')}</SelectOption>
+        </Select>
+    );
 }
 
 export default LanguageSelector;
