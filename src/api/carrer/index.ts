@@ -1,63 +1,43 @@
 import type {CarrerTimeLineItem} from '../../Types/CarrerTimeLineItem';
 import type {StackIcons} from '../../Types/StackIcons';
+import {translate} from "../../translate";
 
 export const getCarrerTimeLine = (): Array<CarrerTimeLineItem> => {
     return [
         {
-            role: 'Desenvolvedor Backend Pleno',
+            role: translate('carer.companies.123milhas.role'),
             company: '123Milhas',
             date: 'Dez/2022 - Now',
             tags: ['PHP', 'Laravel', 'React', 'NodeJs', 'PHPUnit', 'Redis', 'Amazon SQS', 'Microserviços', 'PHPUnit', 'MySQL', 'DDD', 'TDD'],
-            description: `- Desenvolvimeno e manuenção em aplicação backend feita em laravel + mysql.
-- Integração com Gateways de pagamento
-- Definição de arquitetura, implemenação de cultura de testes unitarios
-- Testes unitarios em aplicações laravel utilizando PHPUnit, Pest
-- Jobs de alto desempenho usando sqs
-- Integração com ci/cd, pipeline de testes/deploy no k8s`,
+            description: translate('carer.companies.123milhas.description')
         },
         {
-            role: 'Desenvolvedor PHP Pleno',
+            role: translate('carer.companies.objective.role'),
             company: 'EBANX/Objective',
             date: 'Mai/2022 - Dez/2022',
             tags: ['PHP', 'Laravel', 'React', 'Redis', 'PgSQL', 'PHPUnit', 'Jest', 'Cypress', 'DDD'],
-            description: `- Prestando consultoria ao EBANX
-- Integração com Gateways de pagamento
-- Desenvolvimento e manutenção da Payment Page EBANX com frontend feito em React, criando testes unitários com Jest e testes de integração com cypress.
-- Backend feito em PHP, utilizando DDD como metodologia de desenvolvimento, com testes unitários utilizando PHPUnit.
-- CI/CD.`,
+            description: translate('carer.companies.objective.description'),
         },
         {
-            role: 'Engenheiro de Software',
+            role: translate('carer.companies.logcomex.role'),
             company: 'Logcomex',
             date: 'Fev/2021 - Mai/2022',
             tags: ['PHP', 'Laravel', 'Vue', 'Python', 'Javascript', 'Typescript', 'RabbitMQ', 'Amazon-SQS', 'Amazon-SNS', 'Redis'],
-            description: `- Desenvolvimento e manutenção de sistemas com frontend feito em Vue + Nuxt.js e Typescript. 
-Backend feito em Laravel + php, e banco de dados pgsql.
-- Refatoração de um monólito feito em laravel para uma arquitetura de microserviços, utilizando Rabbitmq + Lumen.
-- Criação de lambda functions na aws Feito com python + auroraDB postgre plugado a um SQS e SNS
-- Testes unitários no frontend usando Jest.
-- Testes unitários para aplicações php usando PHPunit.
-- Testes unitários em aplicações python utilizando pytest`,
+            description: translate('carer.companies.logcomex.description'),
         },
         {
-            role: 'Dev freelancer Full-stack',
+            role: translate('carer.companies.freelancer.role'),
             company: 'Autonomo',
             date: 'Jan/2021 - Now',
             tags: ['PHP', 'Laravel', 'Vue', 'Node.js', 'MySQL', 'Knex.js'],
-            description: `- Desenvolvimento de software
-- Criação de um Sistema de gestão 
-- Javascript, Node, Vue.js
-- Banco de Dados Mysql`,
+            description: translate('carer.companies.freelancer.description'),
         },
         {
-            role: 'Estagiario de programação',
+            role: translate('carer.companies.teknisa.role'),
             company: 'Teknisa',
             date: 'Jan/2021 - Now',
             tags: ['PHP', 'Vue', 'Typescript', 'Pl/SQL'],
-            description: `- Implantação de novas funcionalidades
-- Desenvolvimento de software
-- PHP, Javascript, Typescript, Json, Vue
-- Banco de Dados Oracle SQL Developer`,
+            description: translate('carer.companies.teknisa.description'),
         },
     ];
 };
