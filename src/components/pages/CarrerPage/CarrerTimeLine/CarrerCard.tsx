@@ -4,6 +4,7 @@ import LineBar from '../../../LineBar';
 import {LINES} from '../../../../colorPallet/lines.enum';
 import CarerTags from "./CarerTags";
 import {FONT_FAMMILY} from "../../../../colorPallet";
+import {translate} from "../../../../translate";
 
 function CarrerCard({
                         role,
@@ -26,7 +27,8 @@ function CarrerCard({
                 </CarrerDiv>
                 <SeeMoreDiv>
                     <SecondText>{date}</SecondText>
-                    <SeeMoreButton onClick={() => setSeeMore(!seeMore)}>Ver mais</SeeMoreButton>
+                    <SeeMoreButton
+                        onClick={() => setSeeMore(!seeMore)}>{translate('carer.butons.seeMore')}</SeeMoreButton>
                 </SeeMoreDiv>
             </InternalCardDiv>
             {seeMore &&

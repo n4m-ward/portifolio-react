@@ -7,9 +7,9 @@ function CarrerText() {
         <div>
             <h1>Carer</h1>
             <CarrerTextContent>
-                <p>{translate('carer.introductionText')}</p>
+                <p>{translate('carer.description.introductionText')}</p>
                 <p>
-                    {translate('carer.carerDescription')}
+                    {translate('carer.description.carerDescription')}
                 </p>
             </CarrerTextContent>
         </div>
