@@ -6,7 +6,7 @@ i18n.use(LanguageDetector).init({
   resources,
   order: [localStorage],
   lookupLocalStorage: 'language',
-  fallbackLng: 'en',
+  fallbackLng: 'pt',
   debug: false,
   defaultNS: ['translations'],
   ns: 'translations',

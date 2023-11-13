@@ -14,5 +14,8 @@ export const pt = {
       getCv: 'Curriculo',
       contact: 'Contato',
     },
+    carer: {
+      introductionText: 'Sou apaixonado por tecnologia, tive meu primeiro acesso a programação em 2013 apos criar e dar manutenção em servidores de tibia feitos em lua e PHP durante pouco mais de um ano'
+    }
   },
 };

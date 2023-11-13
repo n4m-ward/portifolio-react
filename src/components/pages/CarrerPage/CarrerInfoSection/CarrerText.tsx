@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { translate } from '../../../../translate';
 
 function CarrerText() {
     return (
@@ -7,9 +8,7 @@ function CarrerText() {
             <h1>Carrer</h1>
             <CarrerTextContent>
                 <p>
-                    Sou apaixonado por tecnologia, tive meu primeiro acesso a programação
-                    em 2013 apos criar e dar manutenção em servidores de tibia feitos em
-                    lua e PHP durante pouco mais de um ano
+                  {translate('carer.introductionText')}
                 </p>
 
                 <p>
